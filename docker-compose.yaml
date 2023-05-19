@@ -1,0 +1,16 @@
+version: "2"
+services:
+  db:
+    image: mariadb:latest
+    environment:
+      MARIADB_ROOT_PASSWORD: example
+    volumes:
+      - db-data:/var/lib/mysql
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+
+volumes:
+  db-data:
